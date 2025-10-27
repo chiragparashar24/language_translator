@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Language Translator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: none;
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #667eea;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #5a67d8;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 10px;
+            min-height: 80px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .label {
+            font-weight: 600;
+            margin-top: 12px;
+            display: block;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>🌐 Language Translator</h2>
+        <form method="POST">
+            <label class="label">Enter text:</label>
+            <textarea name="text" placeholder="Type your text here...">{{ text }}</textarea>
+
+            <label class="label">Source Language:</label>
+            <select name="source_lang">
+                <option value="auto">Auto Detect</option>
+                {% for name, code in languages.items() %}
+                <option value="{{ code }}" {% if code==selected_source %}selected{% endif %}>{{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <label class="label">Target Language:</label>
+            <select name="target_lang">
+                {% for name, code in languages.items() %}
+                <option value="{{ code }}" {% if code==selected_target %}selected{% endif %}>{{ name }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Translate</button>
+        </form>
+
+        {% if translated %}
+        <div class="output">
+            <strong>Translation:</strong>
+            <p>{{ translated }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

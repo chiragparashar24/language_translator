@@ -1,0 +1,6 @@
+Flask
+gunicorn
+googletrans==4.0.0-rc1
+git add requirements.txt
+git commit -m "Add requirements.txt"
+git push
