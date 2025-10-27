@@ -1,4 +1,4 @@
-# 🌐 Language Translator Web App
+# 🌐 Language Translator 
 
 A Flask-based web application that allows users to **translate text between multiple languages** using the `googletrans` library.  
 It includes a **login page** for authentication and a sleek, modern translation interface.
