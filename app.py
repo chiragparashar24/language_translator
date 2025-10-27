@@ -5,7 +5,7 @@ from PyDictionary import PyDictionary
 app = Flask(__name__)
 dictionary = PyDictionary()
 
-LANGUAGES = LANGUAGES = LANGUAGES = {
+LANGUAGES = {
     "Afrikaans (South Africa)": "af",
     "Albanian (Albania)": "sq",
     "Amharic (Ethiopia)": "am",
@@ -18,41 +18,40 @@ LANGUAGES = LANGUAGES = LANGUAGES = {
     "Basque (Spain)": "eu",
     "Belarusian (Belarus)": "be",
     "Bengali (Bangladesh, India)": "bn",
-    "Bhojpuri (India)": "bho",
+    "Bhojpuri (India, Nepal)": "bho",
     "Bosnian (Bosnia & Herzegovina)": "bs",
     "Bulgarian (Bulgaria)": "bg",
     "Catalan (Spain)": "ca",
     "Cebuano (Philippines)": "ceb",
-    "Chichewa (Malawi)": "ny",
-    "Chinese (Simplified) (China)": "zh-CN",
-    "Chinese (Traditional) (Taiwan, Hong Kong)": "zh-TW",
-    "Corsican (France, Corsica)": "co",
+    "Chinese (Simplified, China)": "zh-CN",
+    "Chinese (Traditional, Taiwan)": "zh-TW",
+    "Corsican (France - Corsica)": "co",
     "Croatian (Croatia)": "hr",
     "Czech (Czech Republic)": "cs",
     "Danish (Denmark)": "da",
     "Dhivehi (Maldives)": "dv",
     "Dogri (India)": "doi",
-    "Dutch (Netherlands)": "nl",
+    "Dutch (Netherlands, Belgium)": "nl",
     "English (Worldwide)": "en",
     "Esperanto (International)": "eo",
     "Estonian (Estonia)": "et",
     "Ewe (Ghana, Togo)": "ee",
     "Filipino (Philippines)": "tl",
     "Finnish (Finland)": "fi",
-    "French (France, Worldwide)": "fr",
-    "Frisian (Netherlands, Germany)": "fy",
-    "Galician (Spain, Galicia)": "gl",
+    "French (France, Africa, Canada)": "fr",
+    "Frisian (Netherlands)": "fy",
+    "Galician (Spain)": "gl",
     "Georgian (Georgia)": "ka",
-    "German (Germany)": "de",
-    "Greek (Greece)": "el",
+    "German (Germany, Austria, Switzerland)": "de",
+    "Greek (Greece, Cyprus)": "el",
     "Guarani (Paraguay)": "gn",
     "Gujarati (India)": "gu",
     "Haitian Creole (Haiti)": "ht",
     "Hausa (Nigeria, Niger)": "ha",
     "Hawaiian (Hawaii, USA)": "haw",
-    "Hebrew (Israel)": "iw",
+    "Hebrew (Israel)": "he",
     "Hindi (India)": "hi",
-    "Hmong (China, Southeast Asia)": "hmn",
+    "Hmong (China, Vietnam, Laos)": "hmn",
     "Hungarian (Hungary)": "hu",
     "Icelandic (Iceland)": "is",
     "Igbo (Nigeria)": "ig",
@@ -69,20 +68,19 @@ LANGUAGES = LANGUAGES = LANGUAGES = {
     "Konkani (India)": "gom",
     "Korean (South Korea, North Korea)": "ko",
     "Krio (Sierra Leone)": "kri",
-    "Kurdish (Kurmanji) (Turkey, Iraq, Syria)": "ku",
-    "Kurdish (Sorani) (Iraq, Iran)": "ckb",
+    "Kurdish (Kurmanji, Turkey)": "ku",
+    "Kurdish (Sorani, Iraq)": "ckb",
     "Kyrgyz (Kyrgyzstan)": "ky",
     "Lao (Laos)": "lo",
-    "Latin (Historical/Scholarly)": "la",
+    "Latin (Ancient Europe)": "la",
     "Latvian (Latvia)": "lv",
-    "Lingala (DR Congo, Congo)": "ln",
+    "Lingala (Congo, DRC)": "ln",
     "Lithuanian (Lithuania)": "lt",
-    "Luganda (Uganda)": "lg",
     "Luxembourgish (Luxembourg)": "lb",
     "Macedonian (North Macedonia)": "mk",
     "Maithili (India, Nepal)": "mai",
     "Malagasy (Madagascar)": "mg",
-    "Malay (Malaysia, Brunei)": "ms",
+    "Malay (Malaysia, Brunei, Singapore)": "ms",
     "Malayalam (India)": "ml",
     "Maltese (Malta)": "mt",
     "Maori (New Zealand)": "mi",
@@ -90,19 +88,20 @@ LANGUAGES = LANGUAGES = LANGUAGES = {
     "Meiteilon (Manipuri, India)": "mni-Mtei",
     "Mizo (India)": "lus",
     "Mongolian (Mongolia)": "mn",
-    "Myanmar (Myanmar)": "my",
-    "Nepali (Nepal)": "ne",
+    "Myanmar (Burmese, Myanmar)": "my",
+    "Nepali (Nepal, India)": "ne",
     "Norwegian (Norway)": "no",
+    "Nyanja (Malawi, Zambia)": "ny",
     "Odia (India)": "or",
     "Oromo (Ethiopia, Kenya)": "om",
     "Pashto (Afghanistan, Pakistan)": "ps",
-    "Persian (Iran)": "fa",
+    "Persian (Iran, Afghanistan, Tajikistan)": "fa",
     "Polish (Poland)": "pl",
     "Portuguese (Portugal, Brazil)": "pt",
     "Punjabi (India, Pakistan)": "pa",
-    "Quechua (Peru, Bolivia)": "qu",
-    "Romanian (Romania)": "ro",
-    "Russian (Russia)": "ru",
+    "Quechua (Peru, Bolivia, Ecuador)": "qu",
+    "Romanian (Romania, Moldova)": "ro",
+    "Russian (Russia, Belarus)": "ru",
     "Samoan (Samoa)": "sm",
     "Sanskrit (India)": "sa",
     "Scots Gaelic (Scotland)": "gd",
@@ -114,7 +113,7 @@ LANGUAGES = LANGUAGES = LANGUAGES = {
     "Sinhala (Sri Lanka)": "si",
     "Slovak (Slovakia)": "sk",
     "Slovenian (Slovenia)": "sl",
-    "Somali (Somalia)": "so",
+    "Somali (Somalia, Kenya)": "so",
     "Spanish (Spain, Latin America)": "es",
     "Sundanese (Indonesia)": "su",
     "Swahili (East Africa)": "sw",
@@ -126,9 +125,9 @@ LANGUAGES = LANGUAGES = LANGUAGES = {
     "Thai (Thailand)": "th",
     "Tigrinya (Eritrea, Ethiopia)": "ti",
     "Tsonga (South Africa, Mozambique)": "ts",
-    "Turkish (Turkey)": "tr",
+    "Turkish (Turkey, Cyprus)": "tr",
     "Turkmen (Turkmenistan)": "tk",
-    "Twi (Ghana)": "ak",
+    "Twi (Akan, Ghana)": "ak",
     "Ukrainian (Ukraine)": "uk",
     "Urdu (Pakistan, India)": "ur",
     "Uyghur (China)": "ug",
@@ -136,13 +135,14 @@ LANGUAGES = LANGUAGES = LANGUAGES = {
     "Vietnamese (Vietnam)": "vi",
     "Welsh (Wales)": "cy",
     "Xhosa (South Africa)": "xh",
-    "Yiddish (Jewish Communities)": "yi",
+    "Yiddish (Israel, Europe)": "yi",
     "Yoruba (Nigeria, Benin)": "yo",
     "Zulu (South Africa)": "zu"
 }
 
+  
 @app.route("/", methods=["GET", "POST"])
-def index():
+def translator():
     translated = ""
     meaning = ""
     text = ""
@@ -150,29 +150,22 @@ def index():
     target_lang = "en"
 
     if request.method == "POST":
-        text = request.form["text"]
+        text = request.form["text"].strip()
         source_lang = request.form["source_lang"]
         target_lang = request.form["target_lang"]
+
         try:
-            # Translate text
             translated = GoogleTranslator(source=source_lang, target=target_lang).translate(text)
-            
-            # Get meaning only if target language is English (PyDictionary supports English)
             if target_lang == "en":
-                meaning = dictionary.meaning(text)
-            else:
-                # Optional: translate meaning to target language (just translate the English meaning)
-                english_meaning = dictionary.meaning(text)
-                if english_meaning:
-                    meaning_text = ""
-                    for k, v in english_meaning.items():
-                        meaning_text += f"{k}: {', '.join(v)}\n"
-                    meaning = GoogleTranslator(source='en', target=target_lang).translate(meaning_text)
+                word_meaning = dictionary.meaning(text)
+                if word_meaning:
+                    meaning = "\n".join([f"{k}: {', '.join(v)}" for k, v in word_meaning.items()])
                 else:
                     meaning = "No meaning found."
+            else:
+                meaning = "Meaning available only for English translations."
         except Exception as e:
             translated = f"Error: {e}"
-            meaning = ""
 
     return render_template(
         "index.html",
