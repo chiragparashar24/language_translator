@@ -153,6 +153,29 @@
             box-shadow: 0 3px 6px rgba(255, 255, 255, 0.2);
         }
 
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            /* Increased from 30px to push it down */
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer a {
+            color: #0077b5;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer img {
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+        }
+
         @media (max-width: 768px) {
             .container {
                 width: 95%;
@@ -203,6 +226,14 @@
                 <p>{{ translated }}</p>
             </div>
             {% endif %}
+
+            <footer>
+                <p>Developed by <strong>Chirag Parashar</strong></p>
+                <a href="https://www.linkedin.com/in/chirag-parashar-6b1402373" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo">
+                    Connect on LinkedIn
+                </a>
+            </footer>
         </div>
     </div>
 </body>
